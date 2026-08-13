@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Aptronix Q4 WoW Intelligence — Mobile Optimised</title>
+<style>
+:root{--bg:#0b0d10;--panel:#14181d;--panel2:#191e24;--text:#f4f5f7;--muted:#9aa3ad;--line:#2a3138;--good:#63d297;--warn:#f0bf5a;--bad:#f06d6d;--accent:#d7d9dc}
+*{box-sizing:border-box} body{margin:0;background:linear-gradient(180deg,#0b0d10,#101318 50%,#0b0d10);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.wrap{max-width:1460px;margin:auto;padding:26px 24px 50px}.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:32px;line-height:1.1;margin:8px 0 6px}.subtitle{color:var(--muted);font-size:14px;margin-bottom:22px}
+.nav{display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:22px}.nav button{background:transparent;color:var(--muted);border:1px solid var(--line);padding:9px 13px;border-radius:10px;cursor:pointer}.nav button.active{color:#111;background:#f4f5f7;border-color:#f4f5f7}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}.card{background:rgba(20,24,29,.93);border:1px solid var(--line);border-radius:16px;padding:18px}.kpi{grid-column:span 3}.wide{grid-column:span 8}.side{grid-column:span 4}.full{grid-column:1/-1}.half{grid-column:span 6}
+.label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.value{font-size:30px;font-weight:720;margin-top:6px}.delta{font-size:13px;margin-top:5px}.good{color:var(--good)}.bad{color:var(--bad)}.warn{color:var(--warn)}
+.card h3{font-size:17px;margin:0 0 13px}.card h4{font-size:14px;margin:0 0 8px}.insight{border-left:3px solid #d7d9dc;padding:10px 0 10px 13px;margin:9px 0;color:#dce0e4;font-size:14px;line-height:1.5}
+.muted{color:var(--muted)} .tiny{font-size:12px}.controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+select{background:#101419;color:var(--text);border:1px solid var(--line);border-radius:9px;padding:8px 10px}
+.chart{width:100%;height:330px;position:relative}.chart svg{width:100%;height:100%;overflow:visible}.axis{stroke:#3a424a;stroke-width:1}.gridline{stroke:#242a30;stroke-width:1}.tick{fill:#8d98a3;font-size:11px}.chartvalue{fill:#f1f3f5;font-size:11px;font-weight:650;paint-order:stroke;stroke:#14181d;stroke-width:3px;stroke-linejoin:round}.barvalue{fill:#f1f3f5;font-size:12px;font-weight:700;paint-order:stroke;stroke:#14181d;stroke-width:3px;stroke-linejoin:round}.linepath{fill:none;stroke:#e8e8e8;stroke-width:2.5}.point{fill:#e8e8e8}.bar{fill:#bfc4c9}.bar2{fill:#6f7882}.bar3{fill:#9aa3ad}
+.table{width:100%;border-collapse:collapse;font-size:13px}.table th,.table td{padding:11px 10px;border-bottom:1px solid var(--line);text-align:right}.table th:first-child,.table td:first-child{text-align:left}.table th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+.pill{display:inline-block;padding:4px 8px;border-radius:999px;font-size:11px;border:1px solid var(--line);color:var(--muted)}
+.section{display:none}.section.active{display:block}.callout{background:#11161a;border:1px solid var(--line);border-radius:13px;padding:14px}
+.rank{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line)}.rank:last-child{border-bottom:0}.legend{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:4px 0 12px}.legend-item{display:flex;align-items:center;gap:7px;font-size:12px;color:#cbd1d6}.legend-swatch{width:22px;height:3px;border-radius:4px}.compare3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.compare3>div{background:#101419;border:1px solid var(--line);border-radius:10px;padding:10px}.compare3 .n{font-size:18px;font-weight:700;margin-top:4px}.compare3 .t{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}.scrolltable{overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media(max-width:900px){.kpi,.wide,.side,.half{grid-column:1/-1}.wrap{padding:18px 14px}.value{font-size:25px}h1{font-size:27px}.chart{height:320px}.nav{flex-wrap:nowrap;overflow-x:auto;padding-bottom:10px}.nav button{white-space:nowrap;flex:0 0 auto}.card{padding:15px}.compare3{grid-template-columns:1fr 1fr 1fr}.chartvalue{font-size:10px}.legend{gap:10px}}@media(max-width:520px){.wrap{padding:14px 10px 34px}h1{font-size:23px}.subtitle{font-size:12px}.chart{height:350px;overflow-x:auto}.chart svg{min-width:720px}.compare3{grid-template-columns:1fr}.table{min-width:520px}.controls select{max-width:100%;width:100%}.value{font-size:23px}.legend{position:sticky;left:0}.chartvalue{font-size:10px}.barvalue{font-size:10px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Aptronix • Q4 JAS • WoW Intelligence</div>
+  <h1>Mac, iPhone & iPad — Week-on-Week Intelligence</h1>
+  <div class="subtitle">Quarter-to-date weekly sell-out, sub-LOB movement, and current-week pace vs prior-week comparable period + projected exit. Source: uploaded Q4 WoW workbook.</div>
+
+  <div class="nav">
+    <button class="active" data-tab="overview">Executive View</button>
+    <button data-tab="lob">LOB WoW</button>
+    <button data-tab="sublob">Sub-LOB QTD</button>
+    <button data-tab="deep">Current Week Deep Dive</button>
+  </div>
+
+  <section id="overview" class="section active">
+    <div class="grid" id="overviewGrid"></div>
+  </section>
+
+  <section id="lob" class="section">
+    <div class="grid">
+      <div class="card full">
+        <div class="controls"><h3 style="margin:0">Quarter-to-date LOB weekly trend</h3></div>
+        <div id="lobLegend" class="legend"></div>
+        <div id="lobChart" class="chart"></div>
+      </div>
+      <div class="card full" id="lobNarrative"></div>
+    </div>
+  </section>
+
+  <section id="sublob" class="section">
+    <div class="grid">
+      <div class="card full">
+        <div class="controls">
+          <h3 style="margin:0">Sub-LOB weekly trend</h3>
+          <select id="lobSelect"><option>iPhone</option><option>Mac</option><option>iPad</option></select>
+          <select id="subSelect"></select>
+        </div>
+        <div id="subChart" class="chart"></div>
+      </div>
+      <div class="card half" id="subSnapshot"></div>
+      <div class="card half" id="subRanking"></div>
+    </div>
+  </section>
+
+  <section id="deep" class="section">
+    <div class="grid" id="deepGrid"></div>
+  </section>
+</div>
+
+<script>
+const D = {"lobWeek": {"Mac": [1604, 1585, 1144, 915, 958, 1310, 894], "iPhone": [4086, 4579, 3773, 3841, 4692, 5904, 4538], "iPad": [801, 674, 582, 526, 544, 698, 418]}, "subLob": {"Mac": [{"name": "IMAC M4 2024", "weeks": [1, 1, 0, 1, 0, 0, 2]}, {"name": "IMAC M4 CTO 2024 1TB", "weeks": [0, 1, 0, 0, 0, 0, 0]}, {"name": "MBA M4 13\" 2025", "weeks": [0, 1, 0, 0, 0, 2, 2]}, {"name": "MBA M4 15\" 2025", "weeks": [1, 3, 6, 4, 1, 0, 2]}, {"name": "MBA M5 13\" 2026", "weeks": [587, 561, 361, 205, 324, 722, 484]}, {"name": "MBA M5 15\" 2026", "weeks": [118, 59, 38, 37, 46, 124, 68]}, {"name": "MBN A18 Pro 13\" 2026", "weeks": [178, 182, 144, 169, 176, 368, 264]}, {"name": "MBP M4 14\" 2024", "weeks": [2, 0, 1, 0, 2, 0, 0]}, {"name": "MBP M5 14\" 2025", "weeks": [43, 11, 11, 10, 24, 24, 16]}, {"name": "MBP M5 14\" 2026", "weeks": [113, 57, 51, 33, 30, 42, 38]}, {"name": "MBP M5 16\" 2026", "weeks": [42, 38, 21, 8, 10, 26, 18]}, {"name": "MBP M5 CTO 14\" 2026", "weeks": [0, 0, 0, 0, 1, 0, 0]}, {"name": "MBP M5 Max CTO 16\" 2026", "weeks": [0, 0, 0, 0, 0, 2, 0]}, {"name": "MBA M5 CTO 13\" 2026", "weeks": [0, 0, 0, 1, 0, 0, 0]}, {"name": "MBP M4 16\" 2024", "weeks": [0, 0, 0, 0, 1, 0, 0]}], "iPhone": [{"name": "iPhone 17", "weeks": [1320, 1551, 1544, 2158, 2777, 4130, 3316]}, {"name": "iPhone 15", "weeks": [82, 124, 116, 109, 105, 216, 132]}, {"name": "iPhone 13", "weeks": [3, 2, 1, 1, 0, 2, 0]}, {"name": "iPhone 17 Pro", "weeks": [350, 360, 318, 310, 397, 570, 422]}, {"name": "iPhone 16", "weeks": [86, 87, 75, 68, 90, 180, 128]}, {"name": "iPhone 17 Pro Max", "weeks": [335, 345, 295, 291, 402, 642, 426]}, {"name": "iPhone 17e", "weeks": [78, 74, 55, 45, 50, 156, 114]}, {"name": "iPhone Air", "weeks": [1, 1, 1, 2, 8, 8, 0]}, {"name": "iPhone 16e", "weeks": [0, 0, 0, 0, 1, 0, 0]}], "iPad": [{"name": "iPad 11th Gen", "weeks": [424, 422, 355, 356, 375, 446, 288]}, {"name": "iPad Air 11\" 2025", "weeks": [5, 1, 1, 1, 2, 0, 2]}, {"name": "iPad Air 11\" 2026", "weeks": [170, 101, 82, 56, 68, 98, 64]}, {"name": "iPad Air 13\" 2025", "weeks": [5, 3, 5, 5, 3, 6, 4]}, {"name": "iPad Air 13\" 2026", "weeks": [75, 54, 37, 27, 32, 68, 32]}, {"name": "iPad Pro 11\" 2024 STD", "weeks": [2, 1, 3, 3, 2, 6, 0]}, {"name": "iPad Pro 13\" 2024 STD", "weeks": [0, 0, 1, 1, 0, 0, 0]}, {"name": "iPad Pro M5 11\" 2025 NANO", "weeks": [0, 1, 0, 0, 0, 0, 0]}, {"name": "iPad Pro M5 11\" 2025 STD", "weeks": [62, 49, 28, 14, 17, 42, 16]}, {"name": "iPad Pro M5 13\" 2025 STD", "weeks": [58, 40, 40, 22, 13, 32, 12]}]}, "deep": {"Mac": {"coverage": "Aug 9–12", "days": 4, "w7": 894, "w6_same": 692, "w6_full": 1310, "exit": 1692.398843930636, "same_chg": 29.190751445086715, "exit_chg": 29.190751445086715, "w7_rev": 120985020, "w6_same_rev": 95366399, "w6_full_rev": 180450653, "exit_rev": 228925765.1661783}, "iPhone": {"coverage": "Aug 9–12", "days": 4, "w7": 4538, "w6_same": 2846, "w6_full": 5904, "exit": 9414.037947997189, "same_chg": 59.45186226282502, "exit_chg": 59.45186226282502, "w7_rev": 408875534, "w6_same_rev": 265663066, "w6_full_rev": 543297605, "exit_rev": 836176069.5982335}, "iPad": {"coverage": "Aug 9–12", "days": 4, "w7": 418, "w6_same": 390, "w6_full": 698, "exit": 748.1128205128205, "same_chg": 7.179487179487176, "exit_chg": 7.179487179487176, "w7_rev": 26116833, "w6_same_rev": 25110810, "w6_full_rev": 46250354, "exit_rev": 48103297.80715485}}, "insights": {"Mac": {"peak": "W1 was the strongest completed week at 1,604 units.", "trend": "From W1 to W6, Mac moved -18.3%; W5→W6 moved +36.7%.", "mix": "MBA M5 13\" 2026 contributes 54.1% of W7 so-far units, making it the biggest single swing factor.", "current": "W7 through Aug 12 is +29.2% vs the same Sun–Wed of W6 and is tracking to 1,692 units at exit if that uplift holds across the W6 weekday profile."}, "iPhone": {"peak": "W6 was the strongest completed week at 5,904 units.", "trend": "From W1 to W6, iPhone moved +44.5%; W5→W6 moved +25.8%.", "mix": "iPhone 17 contributes 73.1% of W7 so-far units, making it the biggest single swing factor.", "current": "W7 through Aug 12 is +59.5% vs the same Sun–Wed of W6 and is tracking to 9,414 units at exit if that uplift holds across the W6 weekday profile."}, "iPad": {"peak": "W1 was the strongest completed week at 801 units.", "trend": "From W1 to W6, iPad moved -12.9%; W5→W6 moved +28.3%.", "mix": "iPad 11th Gen contributes 68.9% of W7 so-far units, making it the biggest single swing factor.", "current": "W7 through Aug 12 is +7.2% vs the same Sun–Wed of W6 and is tracking to 748 units at exit if that uplift holds across the W6 weekday profile."}}};
+const weeks=["W1","W2","W3","W4","W5","W6","W7"];
+
+function fmt(n){return Math.round(n).toLocaleString('en-IN')}
+function pct(n){return (n>=0?"+":"")+n.toFixed(1)+"%"}
+function cr(n){return "₹"+(n/10000000).toFixed(1)+" Cr"}
+function cls(n){return n>=0?"good":"bad"}
+
+document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');document.getElementById(b.dataset.tab).classList.add('active');
+});
+
+function lineChart(el, series, opts={}){
+  const W=1000,H=300,p={l:55,r:28,t:28,b:42};
+  const vals=series.flatMap(s=>s.values);
+  const max=Math.max(...vals,1)*1.16, min=0;
+  const x=i=>p.l+i*(W-p.l-p.r)/(weeks.length-1);
+  const y=v=>p.t+(max-v)/(max-min)*(H-p.t-p.b);
+  const palette={iPhone:'#63d297',Mac:'#f0bf5a',iPad:'#d6a7ff'};
+  let svg=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">`;
+  for(let k=0;k<5;k++){let yy=p.t+k*(H-p.t-p.b)/4;let val=max*(1-k/4);svg+=`<line class="gridline" x1="${p.l}" x2="${W-p.r}" y1="${yy}" y2="${yy}"/><text class="tick" x="${p.l-8}" y="${yy+4}" text-anchor="end">${Math.round(val).toLocaleString()}</text>`}
+  weeks.forEach((w,i)=>svg+=`<text class="tick" x="${x(i)}" y="${H-14}" text-anchor="middle">${w}</text>`);
+  series.forEach((s,si)=>{
+    const color=palette[s.name] || '#e8e8e8';
+    const d=s.values.map((v,i)=>(i?'L':'M')+x(i)+','+y(v)).join(' ');
+    svg+=`<path d="${d}" class="linepath" style="stroke:${color};stroke-width:${series.length===1?3:2.8}"/>`;
+    s.values.forEach((v,i)=>{
+      const yy=y(v), labelOffset = series.length===1 ? -11 : (si===0 ? -12 : (si===1 ? 17 : -25));
+      svg+=`<circle class="point" cx="${x(i)}" cy="${yy}" r="4" style="fill:${color}"><title>${s.name} — ${weeks[i]} — ${fmt(v)} units</title></circle>`;
+      svg+=`<text class="chartvalue" x="${x(i)}" y="${yy+labelOffset}" text-anchor="middle">${fmt(v)}</text>`;
+      if(i===s.values.length-1 && series.length>1) svg+=`<text x="${x(i)-5}" y="${yy+34}" text-anchor="end" style="fill:${color};font-size:12px;font-weight:750;paint-order:stroke;stroke:#14181d;stroke-width:3px">${s.name}</text>`;
+    });
+  });
+  svg+=`</svg>`; el.innerHTML=svg;
+}
+function barCompare(el, items){
+  const W=1000,H=300,p={l:110,r:25,t:16,b:34};
+  const max=Math.max(...items.flatMap(x=>[x.a,x.b]),1)*1.1;
+  const group=(W-p.l-p.r)/items.length, bw=group*.26;
+  let svg=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">`;
+  for(let k=0;k<5;k++){let yy=p.t+k*(H-p.t-p.b)/4;svg+=`<line class="gridline" x1="${p.l}" x2="${W-p.r}" y1="${yy}" y2="${yy}"/>`}
+  items.forEach((it,i)=>{
+    const cx=p.l+i*group+group/2, h1=(it.a/max)*(H-p.t-p.b), h2=(it.b/max)*(H-p.t-p.b);
+    const y1=H-p.b-h1, y2=H-p.b-h2;
+    svg+=`<rect class="bar2" x="${cx-bw-3}" y="${y1}" width="${bw}" height="${h1}" rx="3"><title>${it.name} prior: ${fmt(it.a)}</title></rect>`;
+    svg+=`<rect class="bar" x="${cx+3}" y="${y2}" width="${bw}" height="${h2}" rx="3"><title>${it.name} current: ${fmt(it.b)}</title></rect>`;
+    svg+=`<text class="barvalue" x="${cx-bw/2-3}" y="${Math.max(y1-8,14)}" text-anchor="middle">${fmt(it.a)}</text>`;
+    svg+=`<text class="barvalue" x="${cx+bw/2+3}" y="${Math.max(y2-8,14)}" text-anchor="middle">${fmt(it.b)}</text>`;
+    svg+=`<text class="tick" x="${cx}" y="${H-12}" text-anchor="middle">${it.name}</text>`;
+  });svg+=`</svg>`;el.innerHTML=svg;
+}
+
+function buildOverview(){
+  const el=document.getElementById('overviewGrid'); let html="";
+  ["Mac","iPhone","iPad"].forEach(l=>{
+    const d=D.deep[l];
+    html+=`<div class="card kpi"><div class="label">${l} — W7 status</div><div class="value">${fmt(d.w7)}</div><div class="delta ${cls(d.same_chg)}">${pct(d.same_chg)} vs same elapsed days W6</div><div class="tiny muted" style="margin-top:6px">Actual through Aug 12</div><div class="compare3"><div><div class="t">Last week · 7 days</div><div class="n">${fmt(d.w6_full)}</div></div><div><div class="t">Today · W7 actual</div><div class="n">${fmt(d.w7)}</div></div><div><div class="t">W7 exit · run rate</div><div class="n">${fmt(d.exit)}</div></div></div><div class="delta ${cls(d.exit_chg)}">Exit ${pct(d.exit_chg)} vs W6 full week</div></div>`;
+  });
+  const w6sum=D.deep.Mac.w6_full+D.deep.iPhone.w6_full+D.deep.iPad.w6_full, todaysum=D.deep.Mac.w7+D.deep.iPhone.w7+D.deep.iPad.w7, exitsum=D.deep.Mac.exit+D.deep.iPhone.exit+D.deep.iPad.exit;
+  html+=`<div class="card kpi"><div class="label">Combined W7 outlook</div><div class="value">${fmt(exitsum)}</div><div class="delta good">Projected 7-day exit</div><div class="compare3"><div><div class="t">W6 · 7 days</div><div class="n">${fmt(w6sum)}</div></div><div><div class="t">W7 · today</div><div class="n">${fmt(todaysum)}</div></div><div><div class="t">W7 · exit</div><div class="n">${fmt(exitsum)}</div></div></div></div>`;
+  html+=`<div class="card wide"><h3>What the quarter is saying</h3><div class="insight"><b>iPhone is the acceleration engine.</b> Completed weekly sell-out expanded from ${fmt(D.lobWeek.iPhone[0])} in W1 to ${fmt(D.lobWeek.iPhone[5])} in W6, a ${pct((D.lobWeek.iPhone[5]/D.lobWeek.iPhone[0]-1)*100)} move.</div><div class="insight"><b>Mac recovered sharply in W6.</b> After bottoming at ${fmt(Math.min(...D.lobWeek.Mac.slice(0,6)))} units in W4, Mac rebounded to ${fmt(D.lobWeek.Mac[5])} in W6; W7 pace remains ahead of comparable W6 days.</div><div class="insight"><b>iPad is positive but softer.</b> W7 comparable-day growth is ${pct(D.deep.iPad.same_chg)}, with exit tracking ${pct(D.deep.iPad.exit_chg)} above W6.</div></div>`;
+  html+=`<div class="card side"><h3>How to read W7</h3><div class="insight"><b>Same elapsed days</b> measures Sun–Wed W7 against Sun–Wed W6.</div><div class="insight"><b>7 days vs today vs exit</b> shows full W6 actual, W7 actual through Aug 12, and the projected full-week W7 exit.</div><div class="tiny muted">Exit forecast applies the W7 Sun–Wed uplift vs W6 Sun–Wed to the full W6 7-day base. It is a run-rate forecast, not an actual.</div></div>`;
+  html+=`<div class="card full"><h3>Leadership readout</h3><div class="callout">W7 is frozen through Aug 12 across all three LOBs for a clean Sun–Wed comparison. Comparable-day performance is ahead across Mac <b>+29.2%</b>, iPhone <b>+59.5%</b>, and iPad <b>+7.2%</b>. The new 7-day → today → exit view separates actual progress from the forecast and makes the full-week comparison explicit.</div></div>`;
+  el.innerHTML=html;
+}
+function buildLob(){
+  const pal={iPhone:'#63d297',Mac:'#f0bf5a',iPad:'#d6a7ff'};
+  document.getElementById('lobLegend').innerHTML=['iPhone','Mac','iPad'].map(l=>`<div class="legend-item"><span class="legend-swatch" style="background:${pal[l]}"></span><b>${l}</b></div>`).join('');
+  lineChart(document.getElementById('lobChart'),[
+    {name:"iPhone",values:D.lobWeek.iPhone},{name:"Mac",values:D.lobWeek.Mac},{name:"iPad",values:D.lobWeek.iPad}
+  ]);
+  let h="<h3>LOB-level intelligence</h3>";
+  ["Mac","iPhone","iPad"].forEach(l=>{const i=D.insights[l];h+=`<div class="insight"><b>${l}:</b> ${i.peak} ${i.trend} ${i.current}</div>`});
+  document.getElementById('lobNarrative').innerHTML=h;
+}
+function buildSubSelectors(){
+  const lob=document.getElementById('lobSelect'), sub=document.getElementById('subSelect');
+  function refresh(){
+    sub.innerHTML=D.subLob[lob.value].map((x,i)=>`<option value="${i}">${x.name}</option>`).join("");
+    renderSub();
+  }
+  lob.onchange=refresh;sub.onchange=renderSub;refresh();
+}
+function renderSub(){
+  const lob=document.getElementById('lobSelect').value, idx=+document.getElementById('subSelect').value||0;
+  const s=D.subLob[lob][idx];
+  lineChart(document.getElementById('subChart'),[{name:s.name,values:s.weeks}]);
+  const full=s.weeks.slice(0,6), peak=Math.max(...full), peakW=full.indexOf(peak)+1;
+  const chg=s.weeks[5]?((s.weeks[6]/s.weeks[5]-1)*100):0;
+  const totalW7=D.lobWeek[lob][6], share=totalW7?s.weeks[6]/totalW7*100:0;
+  document.getElementById('subSnapshot').innerHTML=`<h3>${s.name} — readout</h3>
+    <div class="insight">Peak completed week: <b>W${peakW} at ${fmt(peak)} units</b>. W7 so-far is <b>${fmt(s.weeks[6])}</b>, representing <b>${share.toFixed(1)}%</b> of ${lob} W7 units.</div>
+    <div class="insight">Raw W7 vs full W6 is <b class="${cls(chg)}">${pct(chg)}</b>; use the Current Week Deep Dive for elapsed-day and exit-normalised comparison.</div>`;
+  const ranks=[...D.subLob[lob]].sort((a,b)=>b.weeks[6]-a.weeks[6]).slice(0,6);
+  document.getElementById('subRanking').innerHTML=`<h3>W7 mix — top sub-LOBs</h3>${ranks.map((x,i)=>`<div class="rank"><span>${i+1}. ${x.name}</span><span><b>${fmt(x.weeks[6])}</b> <span class="muted">${(x.weeks[6]/totalW7*100).toFixed(1)}%</span></span></div>`).join("")}`;
+}
+function buildDeep(){
+  const el=document.getElementById('deepGrid');let html="";
+  ["Mac","iPhone","iPad"].forEach(l=>{const d=D.deep[l];
+    html+=`<div class="card kpi"><div class="label">${l} comparable-day change</div><div class="value ${cls(d.same_chg)}">${pct(d.same_chg)}</div><div class="tiny muted">W7 ${d.coverage}: ${fmt(d.w7)} vs ${fmt(d.w6_same)} in same elapsed W6 days</div></div>`;
+  });
+  html+=`<div class="card kpi"><div class="label">Combined W7 exit</div><div class="value">${fmt(D.deep.Mac.exit+D.deep.iPhone.exit+D.deep.iPad.exit)}</div><div class="tiny muted">W7 comparable-day uplift applied to full W6 7-day base</div></div>`;
+  html+=`<div class="card full"><h3>So-far vs comparable W6 days</h3><div id="deepBars" class="chart"></div></div>`;
+  html+=`<div class="card half"><h3>Exit vs full W6</h3><table class="table"><thead><tr><th>LOB</th><th>W6 full</th><th>W7 exit</th><th>Change</th></tr></thead><tbody>
+    ${["Mac","iPhone","iPad"].map(l=>{const d=D.deep[l];return `<tr><td>${l}</td><td>${fmt(d.w6_full)}</td><td><b>${fmt(d.exit)}</b></td><td class="${cls(d.exit_chg)}">${pct(d.exit_chg)}</td></tr>`}).join("")}
+    </tbody></table></div>`;
+  html+=`<div class="card half"><h3>Revenue pace</h3><table class="table"><thead><tr><th>LOB</th><th>W7 so far</th><th>Projected exit</th><th>vs W6 rev</th></tr></thead><tbody>
+    ${["Mac","iPhone","iPad"].map(l=>{const d=D.deep[l],chg=(d.exit_rev/d.w6_full_rev-1)*100;return `<tr><td>${l}</td><td>${cr(d.w7_rev)}</td><td><b>${cr(d.exit_rev)}</b></td><td class="${cls(chg)}">${pct(chg)}</td></tr>`}).join("")}
+    </tbody></table></div>`;
+  html+=`<div class="card full"><h3>Decision intelligence</h3>
+    <div class="insight"><b>Mac:</b> current pace is the strongest relative improvement. Exit is tracking near <b>${fmt(D.deep.Mac.exit)} units</b>, about <b>${pct(D.deep.Mac.exit_chg)}</b> above W6, suggesting W6 was not just a one-week rebound if the final days hold.</div>
+    <div class="insight"><b>iPhone:</b> absolute scale remains dominant. On the clean Aug 9–12 comparison, comparable-day sell-out is <b>+59.5%</b>; projected exit is <b>${fmt(D.deep.iPhone.exit)}</b>, or <b>+59.5%</b> vs W6 if the current uplift holds across the W6 weekday profile.</div>
+    <div class="insight"><b>iPad:</b> the week is positive but fragile: only <b>+7.2%</b> on comparable days and a projected <b>+4.8%</b> exit. This is the LOB where the remaining days matter most to avoid flattening back to W6.</div>
+    <div class="insight"><b>Mix concentration matters:</b> W7 is heavily led by a few products — iPhone 17, MacBook Air M5 13-inch and iPad 11th Gen. Any availability or conversion shift in these hero sub-LOBs will disproportionately move the final-week outcome.</div>
+  </div>`;
+  el.innerHTML=html;
+  barCompare(document.getElementById('deepBars'),["Mac","iPhone","iPad"].map(l=>({name:l,a:D.deep[l].w6_same,b:D.deep[l].w7})));
+}
+buildOverview();buildLob();buildSubSelectors();buildDeep();
+</script>
+</body>
+</html>
