@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const html = await readFile(new URL("./index.html", import.meta.url), "utf8");
+const governance = await readFile(new URL("./governance.js", import.meta.url), "utf8");
 const match = html.match(/const D=(\{.*\});\nconst fmt=/);
 assert.ok(match, "dashboard data block must be present");
 const data = JSON.parse(match[1]);
@@ -37,4 +38,20 @@ test("as-of metadata and live movements are consistent", () => {
     const expectedMove = (totals[7] / totals[6] - 1) * 100;
     assert.ok(Math.abs(data.moves[lob][7] - expectedMove) < 1e-10);
   }
+});
+
+test("shared intelligence navigation includes all five dashboards", () => {
+  assert.match(html, /dashboard-config\.js/);
+  assert.match(html, /governance\.css/);
+  assert.match(html, /governance\.js/);
+  for (const path of [
+    "Retail-Sales-MTD",
+    "Boardroom-JAS-Weekly",
+    "Boardroom-JAS-QTD",
+    "Boardroom-JAS-YOY",
+    "Weekly-Trajectory-Intelligence",
+  ]) {
+    assert.match(governance, new RegExp(`aptronix26\\.github\\.io/${path}/`, "i"));
+  }
+  assert.match(governance, /"weekly-trajectory": trajectoryAudit/);
 });
